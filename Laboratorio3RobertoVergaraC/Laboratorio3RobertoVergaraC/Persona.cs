@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio3RobertoVergaraC
 {
-    public abstract class Persona
+    public class Persona
     {
         protected string name;
         protected string surname;
@@ -14,5 +14,13 @@ namespace Laboratorio3RobertoVergaraC
         protected string rut;
         protected DateTime birthdate;
 
+        public Persona(string name, string surname, string nacionality, string rut, DateTime birthdate)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.nacionality = nacionality;
+            this.rut = rut;
+            this.birthdate = birthdate;
+        }
     }
 }
