@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio3RobertoVergaraC
 {
-    class Persona
+    class Cajeros : Trabajadores
     {
     }
 }

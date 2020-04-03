@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E5E0E00-5AF1-4F30-8177-F389FA8ACBBA}</ProjectGuid>
+    <ProjectGuid>{FED02F55-9122-43D6-BD49-A6C91B63F0E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Laboratorio3RobertoVergaraC</RootNamespace>
     <AssemblyName>Laboratorio3RobertoVergaraC</AssemblyName>
@@ -43,20 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Persons\Auxiliares.cs" />
-    <Compile Include="Persons\Clientes.cs" />
-    <Compile Include="Persons\Empleados.cs" />
-    <Compile Include="Persons\Jefes.cs" />
-    <Compile Include="Persons\Persona.cs" />
-    <Compile Include="Persons\Supervisores.cs" />
+    <Compile Include="Auxiliares.cs" />
+    <Compile Include="Cajeros.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="Jefes.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reponedores.cs" />
+    <Compile Include="Supervisores.cs" />
+    <Compile Include="Trabajadores.cs" />
     <Compile Include="Ventas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,6 +8,6 @@ namespace Laboratorio3RobertoVergaraC
 {
     class Ventas
     {
-        private List<Producto> products;
+
     }
 }

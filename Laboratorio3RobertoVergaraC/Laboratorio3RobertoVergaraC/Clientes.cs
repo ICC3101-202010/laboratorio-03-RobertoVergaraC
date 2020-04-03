@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio3RobertoVergaraC
 {
-    class Supervisores
+    class Clientes : Persona
     {
-        private int salary;
     }
 }

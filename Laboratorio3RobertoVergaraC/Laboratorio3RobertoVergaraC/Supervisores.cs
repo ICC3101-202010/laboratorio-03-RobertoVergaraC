@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio3RobertoVergaraC
 {
-    class Producto
+    class Supervisores : Trabajadores
     {
-
     }
 }

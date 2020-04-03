@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Laboratorio3RobertoVergaraC
 {
-    class Clientes
+    public abstract class Trabajadores
     {
+        protected double salary;
+        protected int status;
     }
 }
