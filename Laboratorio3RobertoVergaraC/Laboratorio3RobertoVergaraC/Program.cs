@@ -15,7 +15,7 @@ namespace Laboratorio3RobertoVergaraC
             int contador = 1;
             while (contador != 0)
             {
-                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d) Agregar Cliente\n(e) Comprar con un cliente\n(f) Agregar Producto\n(g) Salir del programa\n");
+                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d)Cambiar horario a Trabajador\n(e)Ver todos los Trabajadores\n(f) Agregar Cliente\n(g) Comprar con un cliente\n(h) Agregar Producto\n(i) Salir del programa\n");
                 string option = Console.ReadLine();
                 if (option == "a") //Agregar Trabajador
                 {
@@ -44,8 +44,10 @@ namespace Laboratorio3RobertoVergaraC
                     string name = Console.ReadLine();
                     Console.WriteLine("Seleccione el rut del trabajador:");
                     string rut = Console.ReadLine();
-                    Console.WriteLine("Seleccione el nuevo salario que desea para el trabajador:"); //Agregar saalrio actual
+                    Trabajadores worker = admin.IdentificarObjeto(name, rut);
+                    Console.WriteLine("Seleccione el nuevo sueldo que quiera para el trabajador (Sueldo actual " + worker.Salary + "):");
                     int salary = Int32.Parse(Console.ReadLine());
+                    admin.CambiarSueldo(worker, salary);
                 }
                 else if (option == "c") //Subir/Bajar Rango al Trabajador
                 {
@@ -55,8 +57,25 @@ namespace Laboratorio3RobertoVergaraC
                     string rut = Console.ReadLine();
                     Console.WriteLine("Seleccione el nuevo cargo que desea para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):"); //Agregar puesto actual
                     string status = Console.ReadLine();
+                    Trabajadores worker = admin.IdentificarObjeto(name, rut);
+                    admin.CambiarRango(worker,status);
                 }
-                else if (option == "d") //Agregar Cliente
+                else if (option == "d") //Cambiar horario Trabajador
+                {
+                    Console.WriteLine("\nSeleccione el nombre del trabajador:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Seleccione el rut del trabajador:");
+                    string rut = Console.ReadLine();
+                    Trabajadores worker = admin.IdentificarObjeto(name,rut);
+                    Console.WriteLine("Seleccione el nuevo horario que desea (Horario actual: " + worker.Schedule + "):");
+                    string schedule = Console.ReadLine();
+                    admin.CambiarHorario(worker, schedule);
+                }
+                else if (option == "e") //Ver todos los Trabajadores
+                {
+                    admin.VerTrabajadores();
+                }
+                else if (option == "f") //Agregar Cliente
                 {
                     Console.WriteLine("\nSeleccione el nombre del cliente:");
                     string name = Console.ReadLine();
@@ -70,11 +89,11 @@ namespace Laboratorio3RobertoVergaraC
                     string date = Console.ReadLine();
                     DateTime birthday = DateTime.Parse(date);
                 }
-                else if (option == "e") //Comprar con un cliente
+                else if (option == "g") //Comprar con un cliente
                 {
 
                 }
-                else if (option == "f") //Agregar Producto
+                else if (option == "h") //Agregar Producto
                 {
                     Console.WriteLine("\nSeleccione el nombre del producto que quiere agregar:");
                     string name = Console.ReadLine();
@@ -85,7 +104,7 @@ namespace Laboratorio3RobertoVergaraC
                     Console.WriteLine("Seleccione la cantidad del producto que quiere agregar:");
                     int stock = Int32.Parse(Console.ReadLine());
                 }
-                else if (option == "g") //Salir del programa
+                else if (option == "i") //Salir del programa
                 {
                     contador = 0;
                 }

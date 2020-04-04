@@ -28,11 +28,6 @@ namespace Laboratorio3RobertoVergaraC
             this.Schedule = schedule;
         }
 
-        public string VerTrabajador()
-        {
-            return "Nombre: " + this.Name + "\nApellido: " + this.Surname + "\nNacionalidad: " + this.Nacionality + "\nRut: " + this.Rut + "\nFecha Nacimiento: " + this.Birthdate;
-        }
-
         public string VerInfoTrabajador()
         {
             return "Salario: " + this.Salary + "\nHorario: " + this.Schedule;

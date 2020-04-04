@@ -21,7 +21,7 @@ namespace Laboratorio3RobertoVergaraC
                 Jefes jefe = new Jefes(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < jefes.Count; i++)
                 {
-                    if (jefe.VerTrabajador() == jefes[i].VerTrabajador())
+                    if (jefe.VerPersona() == jefes[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -39,7 +39,7 @@ namespace Laboratorio3RobertoVergaraC
                 Supervisores supervisor = new Supervisores(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < supervisores.Count; i++)
                 {
-                    if (supervisor.VerTrabajador() == jefes[i].VerTrabajador())
+                    if (supervisor.VerPersona() == jefes[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -57,7 +57,7 @@ namespace Laboratorio3RobertoVergaraC
                 Cajeros cajero = new Cajeros(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < cajeros.Count; i++)
                 {
-                    if (cajero.VerTrabajador() == cajeros[i].VerTrabajador())
+                    if (cajero.VerPersona() == cajeros[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -75,7 +75,7 @@ namespace Laboratorio3RobertoVergaraC
                 Reponedores reponedor = new Reponedores(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < reponedores.Count; i++)
                 {
-                    if (reponedor.VerTrabajador() == reponedores[i].VerTrabajador())
+                    if (reponedor.VerPersona() == reponedores[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -93,7 +93,7 @@ namespace Laboratorio3RobertoVergaraC
                 Auxiliares auxiliar = new Auxiliares(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < auxiliares.Count; i++)
                 {
-                    if (auxiliar.VerTrabajador() == auxiliares[i].VerTrabajador())
+                    if (auxiliar.VerPersona() == auxiliares[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -118,27 +118,27 @@ namespace Laboratorio3RobertoVergaraC
             Console.WriteLine("\nLista de Jefes:");
             for (int i = 0; i < jefes.Count; i++)
             {
-                Console.WriteLine(jefes[i].VerTrabajador());
+                Console.WriteLine(jefes[i].VerPersona());
             }
             Console.WriteLine("\nLista de Supervisores:");
             for (int i = 0; i < supervisores.Count; i++)
             {
-                Console.WriteLine(supervisores[i].VerTrabajador());
+                Console.WriteLine(supervisores[i].VerPersona());
             }
             Console.WriteLine("\nLista de Cajeros:");
             for (int i = 0; i < cajeros.Count; i++)
             {
-                Console.WriteLine(cajeros[i].VerTrabajador());
+                Console.WriteLine(cajeros[i].VerPersona());
             }
             Console.WriteLine("\nLista de Reponedores:");
             for (int i = 0; i < reponedores.Count; i++)
             {
-                Console.WriteLine(reponedores[i].VerTrabajador());
+                Console.WriteLine(reponedores[i].VerPersona());
             }
             Console.WriteLine("\nLista de Auxiliares:");
             for (int i = 0; i < auxiliares.Count; i++)
             {
-                Console.WriteLine(auxiliares[i].VerTrabajador());
+                Console.WriteLine(auxiliares[i].VerPersona());
             }
         }
 
@@ -187,37 +187,52 @@ namespace Laboratorio3RobertoVergaraC
         {
             for (int i = 0; i < jefes.Count; i++)
             {
-                if (trabajador.VerTrabajador() == jefes[i].VerTrabajador())
+                if (trabajador.VerPersona() == jefes[i].VerPersona())
                 {
                     jefes[i].Salary = newSalary;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(jefes[i].VerPersona());
+                    Console.WriteLine(jefes[i].VerInfoTrabajador());
                 }
             }
             for (int i = 0; i < supervisores.Count; i++)
             {
-                if (trabajador.VerTrabajador() == supervisores[i].VerTrabajador())
+                if (trabajador.VerPersona() == supervisores[i].VerPersona())
                 {
                     supervisores[i].Salary = newSalary;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(supervisores[i].VerPersona());
+                    Console.WriteLine(supervisores[i].VerInfoTrabajador());
                 }
             }
             for (int i = 0; i < cajeros.Count; i++)
             {
-                if (trabajador.VerTrabajador() == cajeros[i].VerTrabajador())
+                if (trabajador.VerPersona() == cajeros[i].VerPersona())
                 {
                     cajeros[i].Salary = newSalary;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(cajeros[i].VerPersona());
+                    Console.WriteLine(cajeros[i].VerInfoTrabajador());
                 }
             }
             for (int i = 0; i < reponedores.Count; i++)
             {
-                if (trabajador.VerTrabajador() == reponedores[i].VerTrabajador())
+                if (trabajador.VerPersona() == reponedores[i].VerPersona())
                 {
                     reponedores[i].Salary = newSalary;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(reponedores[i].VerPersona());
+                    Console.WriteLine(reponedores[i].VerInfoTrabajador());
                 }
             }
             for (int i = 0; i < auxiliares.Count; i++)
             {
-                if (trabajador.VerTrabajador() == auxiliares[i].VerTrabajador())
+                if (trabajador.VerPersona() == auxiliares[i].VerPersona())
                 {
                     auxiliares[i].Salary = newSalary;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(auxiliares[i].VerPersona());
+                    Console.WriteLine(auxiliares[i].VerInfoTrabajador());
                 }
             }
 
@@ -225,45 +240,100 @@ namespace Laboratorio3RobertoVergaraC
 
         public void CambiarRango(Trabajadores trabajador, string newStatus)
         {
-            int status = Convert.ToInt32(newStatus);
+            if (newStatus == "1") { jefes.Add(new Jefes(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "2") { supervisores.Add(new Supervisores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "3") { cajeros.Add(new Cajeros(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "4") { reponedores.Add(new Reponedores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "5") { auxiliares.Add(new Auxiliares(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
 
-        }
-
-        public void CambiarHorario(Trabajadores trabajador,string newSchedule)
-        {
             for (int i = 0; i < jefes.Count; i++)
             {
-                if (trabajador.VerTrabajador() == jefes[i].VerTrabajador())
+                if (trabajador.VerPersona() == jefes[i].VerPersona())
                 {
-                    jefes[i].Schedule = newSchedule;
+                    jefes.Remove(jefes[i]);
                 }
             }
             for (int i = 0; i < supervisores.Count; i++)
             {
-                if (trabajador.VerTrabajador() == supervisores[i].VerTrabajador())
+                if (trabajador.VerPersona() == supervisores[i].VerPersona())
                 {
-                    supervisores[i].Schedule = newSchedule;
+                    supervisores.Remove(supervisores[i]);
                 }
             }
             for (int i = 0; i < cajeros.Count; i++)
             {
-                if (trabajador.VerTrabajador() == cajeros[i].VerTrabajador())
+                if (trabajador.VerPersona() == cajeros[i].VerPersona())
                 {
-                    cajeros[i].Schedule = newSchedule;
+                    cajeros.Remove(cajeros[i]);
                 }
             }
             for (int i = 0; i < reponedores.Count; i++)
             {
-                if (trabajador.VerTrabajador() == reponedores[i].VerTrabajador())
+                if (trabajador.VerPersona() == reponedores[i].VerPersona())
                 {
-                    reponedores[i].Schedule = newSchedule;
+                    reponedores.Remove(reponedores[i]);
                 }
             }
             for (int i = 0; i < auxiliares.Count; i++)
             {
-                if (trabajador.VerTrabajador() == auxiliares[i].VerTrabajador())
+                if (trabajador.VerPersona() == auxiliares[i].VerPersona())
+                {
+                    auxiliares.Remove(auxiliares[i]);
+                }
+            }
+
+        }
+   
+        public void CambiarHorario(Trabajadores trabajador, string newSchedule)
+            {
+            for (int i = 0; i < jefes.Count; i++)
+            {
+                if (trabajador.VerPersona() == jefes[i].VerPersona())
+                {
+                    jefes[i].Schedule = newSchedule;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(jefes[i].VerPersona());
+                    Console.WriteLine(jefes[i].VerInfoTrabajador());
+                }
+            }
+            for (int i = 0; i < supervisores.Count; i++)
+            {
+                if (trabajador.VerPersona() == supervisores[i].VerPersona())
+                {
+                    supervisores[i].Schedule = newSchedule;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(supervisores[i].VerPersona());
+                    Console.WriteLine(supervisores[i].VerInfoTrabajador());
+                }
+            }
+            for (int i = 0; i < cajeros.Count; i++)
+            {
+                if (trabajador.VerPersona() == cajeros[i].VerPersona())
+                {
+                    cajeros[i].Schedule = newSchedule;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(cajeros[i].VerPersona());
+                    Console.WriteLine(cajeros[i].VerInfoTrabajador());
+                }
+            }
+            for (int i = 0; i < reponedores.Count; i++)
+            {
+                if (trabajador.VerPersona() == reponedores[i].VerPersona())
+                {
+                    reponedores[i].Schedule = newSchedule;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(reponedores[i].VerPersona());
+                    Console.WriteLine(reponedores[i].VerInfoTrabajador());
+                }
+            }
+            for (int i = 0; i < auxiliares.Count; i++)
+            {
+                if (trabajador.VerPersona() == auxiliares[i].VerPersona())
                 {
                     auxiliares[i].Schedule = newSchedule;
+                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine(auxiliares[i].VerPersona());
+                    Console.WriteLine(auxiliares[i].VerInfoTrabajador());
                 }
             }
         }
