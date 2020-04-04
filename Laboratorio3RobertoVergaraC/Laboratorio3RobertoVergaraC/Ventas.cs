@@ -57,7 +57,7 @@ namespace Laboratorio3RobertoVergaraC
             for (int i = 1; i < Productos.Count + 1; i++)
             {
                 Console.WriteLine("\nOpción (" + i + "):");
-                Console.WriteLine(Productos[i-1].InformacionProducto());
+                Console.WriteLine(Productos[i - 1].InformacionProducto());
             }
         }
 
@@ -67,7 +67,7 @@ namespace Laboratorio3RobertoVergaraC
             for (int i = 1; i < clientes.Count + 1; i++)
             {
                 Console.WriteLine("\nOpción (" + i + "):");
-                Console.WriteLine(clientes[i-1].VerPersona());
+                Console.WriteLine(clientes[i - 1].VerPersona());
             }
         }
 
@@ -121,13 +121,13 @@ namespace Laboratorio3RobertoVergaraC
                 else if (folow == "2")
                 {
                     Console.WriteLine("\nLos Productos seleccionados son: ");
-                    for (int i = 0; i < carro.Count ; i++)
+                    for (int i = 0; i < carro.Count; i++)
                     {
                         Console.WriteLine("\n" + Productos[i].InformacionProducto());
                     }
                     return carro;
                 }
-                
+
                 else
                 {
                     Console.WriteLine("No es opción válida, por favor seleccione una que si lo sea");
@@ -146,9 +146,12 @@ namespace Laboratorio3RobertoVergaraC
 
         public void GenerarBoleta(List<Producto> carro, Clientes cliente)
         {
+            Administrativo ad = new Administrativo();
             Console.WriteLine("\nBOLETA \n\n");
             Console.WriteLine("Cliente :\n" + cliente.VerPersona());
             Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+            Console.WriteLine("Fue atendido en: " + ad.Cajero());
+            Console.WriteLine("La persona que lo atendió fue :\n" + ad.CajeroPersona());
             Console.WriteLine("Los productos que se compraron son:");
             for (int i = 0; i < carro.Count; i++)
             {
@@ -157,5 +160,20 @@ namespace Laboratorio3RobertoVergaraC
             Console.WriteLine("\n\n--------FIN BOLETA--------");
 
         }
+
+        public void ModificarStock(List<Producto> productoss)
+        {
+            Console.WriteLine("Seleccione el producto que desea modificar");
+            VerProductos();
+            int choose2 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Seleccione la nueva cantidad:");
+            int cantidad2 = Int32.Parse(Console.ReadLine());
+            productos[choose2 - 1].Stock = cantidad2;
+        }
+        
+        
     }
+
+            
+    
 }

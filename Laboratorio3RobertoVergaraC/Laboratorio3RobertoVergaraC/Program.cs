@@ -16,7 +16,7 @@ namespace Laboratorio3RobertoVergaraC
             int contador = 1;
             while (contador != 0)
             {
-                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d) Cambiar horario a Trabajador\n(e) Ver todos los Trabajadores\n(f) Agregar Cliente\n(g) Comprar con un cliente\n(h) Agregar Producto\n(i) Salir del programa\n");
+                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d) Cambiar horario a Trabajador\n(e) Ver todos los Trabajadores\n(f) Agregar Cliente\n(g) Comprar con un cliente (recuerde que para poder comprar, antes tiene que haber creado por lo menos 1 cajero para que lo puedan atender)\n(h) Agregar Producto\n(i)Modificar Stock de Algún Producto\n(j) Salir del programa\n");
                 string option = Console.ReadLine();
                 if (option == "a") //Agregar Trabajador
                 {
@@ -119,7 +119,11 @@ namespace Laboratorio3RobertoVergaraC
                     int stock = Int32.Parse(Console.ReadLine());
                     ventas.CrearProducto(name, brand, price, stock);
                 }
-                else if (option == "i") //Salir del programa
+                else if (option == "i") //Modificar Stock de algún producto
+                {
+
+                }
+                else if (option == "j") //Salir del programa
                 {
                     contador = 0;
                 }
