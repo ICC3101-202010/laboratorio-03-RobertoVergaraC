@@ -8,6 +8,16 @@ namespace Laboratorio3RobertoVergaraC
 {
     class Ventas
     {
-        private List<Producto> producto = new List<Producto>();
+        private List<Clientes> clientes = new List<Clientes>();
+        private List<Producto> productos = new List<Producto>();
+
+        public void VerProductos()
+        {
+            Console.WriteLine("\nLos Productos que el supermercado son: ");
+            for (int i=0; i<productos.Count;i++)
+            {
+                Console.WriteLine(productos[i].InformacionProducto());
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Laboratorio3RobertoVergaraC
 {
     class Supervisores : Trabajadores
     {
-        public Supervisores(double salary, double hours, int status, string name, string surname, string nacionality, string rut, DateTime birthdate) : base(salary, hours, status, name, surname, nacionality, rut, birthdate)
+        public Supervisores(int salary, string schedule, string name, string surname, string nacionality, string rut, DateTime birthdate) : base(salary, schedule, name, surname, nacionality, rut, birthdate)
         {
             this.name = name;
             this.surname = surname;
@@ -17,8 +17,8 @@ namespace Laboratorio3RobertoVergaraC
             this.birthdate = birthdate;
 
             this.salary = salary;
-            this.hours = hours;
-            this.status = status;
+            this.schedule = schedule;
+            this.status = 2;
         }
     }
 }
