@@ -8,19 +8,25 @@ namespace Laboratorio3RobertoVergaraC
 {
     public class Persona
     {
-        protected string name;
-        protected string surname;
-        protected string nacionality;
-        protected string rut;
-        protected DateTime birthdate;
+        private string name;
+        private string surname;
+        private string nacionality;
+        private string rut;
+        private DateTime birthdate;
+
+        public string Name { get => name; set => name = value; }
+        public string Surname { get => surname; set => surname = value; }
+        public string Nacionality { get => nacionality; set => nacionality = value; }
+        public string Rut { get => rut; set => rut = value; }
+        public DateTime Birthdate { get => birthdate; set => birthdate = value; }
 
         public Persona(string name, string surname, string nacionality, string rut, DateTime birthdate)
         {
-            this.name = name;
-            this.surname = surname;
-            this.nacionality = nacionality;
-            this.rut = rut;
-            this.birthdate = birthdate;
+            this.Name = name;
+            this.Surname = surname;
+            this.Nacionality = nacionality;
+            this.Rut = rut;
+            this.Birthdate = birthdate;
         }
     }
 }

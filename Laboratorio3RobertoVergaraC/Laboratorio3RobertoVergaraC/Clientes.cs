@@ -10,11 +10,11 @@ namespace Laboratorio3RobertoVergaraC
     {
         public Clientes(string name, string surname, string nacionality, string rut, DateTime birthdate) : base(name, surname, nacionality, rut, birthdate)
         {
-            this.name = name;
-            this.surname = surname;
-            this.nacionality = nacionality;
-            this.rut = rut;
-            this.birthdate = birthdate;
+            this.Name = name;
+            this.Surname = surname;
+            this.Nacionality = nacionality;
+            this.Rut = rut;
+            this.Birthdate = birthdate;
         }
     }
 }

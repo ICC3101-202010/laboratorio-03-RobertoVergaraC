@@ -142,5 +142,130 @@ namespace Laboratorio3RobertoVergaraC
             }
         }
 
+        public Trabajadores IdentificarObjeto(string name, string rut)
+        {
+            for (int i = 0; i < jefes.Count; i++)
+            {
+                if (jefes[i].NameplusRut() == "Nombre: " + name + "\nRut: " + rut)
+                {
+                    return jefes[i];
+                }
+            }
+            for (int i = 0; i < supervisores.Count; i++)
+            {
+                if (supervisores[i].NameplusRut() == "Nombre: " + name + "\nRut: " + rut)
+                {
+                    return supervisores[i];
+                }
+            }
+            for (int i = 0; i < cajeros.Count; i++)
+            {
+                if (cajeros[i].NameplusRut() == "Nombre: " + name + "\nRut: " + rut)
+                {
+                    return cajeros[i];
+                }
+            }
+            for (int i = 0; i < reponedores.Count; i++)
+            {
+                if (reponedores[i].NameplusRut() == "Nombre: " + name + "\nRut: " + rut)
+                {
+                    return reponedores[i];
+                }
+            }
+            for (int i = 0; i < auxiliares.Count; i++)
+            {
+                if (auxiliares[i].NameplusRut() == "Nombre: " + name + "\nRut: " + rut)
+                {
+                    return auxiliares[i];
+                }
+            }
+            Console.WriteLine("\nEl trabajador no existe");
+            return null;
+        }
+
+        public void CambiarSueldo(Trabajadores trabajador, int newSalary)
+        {
+            for (int i = 0; i < jefes.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == jefes[i].VerTrabajador())
+                {
+                    jefes[i].Salary = newSalary;
+                }
+            }
+            for (int i = 0; i < supervisores.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == supervisores[i].VerTrabajador())
+                {
+                    supervisores[i].Salary = newSalary;
+                }
+            }
+            for (int i = 0; i < cajeros.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == cajeros[i].VerTrabajador())
+                {
+                    cajeros[i].Salary = newSalary;
+                }
+            }
+            for (int i = 0; i < reponedores.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == reponedores[i].VerTrabajador())
+                {
+                    reponedores[i].Salary = newSalary;
+                }
+            }
+            for (int i = 0; i < auxiliares.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == auxiliares[i].VerTrabajador())
+                {
+                    auxiliares[i].Salary = newSalary;
+                }
+            }
+
+        }
+
+        public void CambiarRango(Trabajadores trabajador, string newStatus)
+        {
+            int status = Convert.ToInt32(newStatus);
+
+        }
+
+        public void CambiarHorario(Trabajadores trabajador,string newSchedule)
+        {
+            for (int i = 0; i < jefes.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == jefes[i].VerTrabajador())
+                {
+                    jefes[i].Schedule = newSchedule;
+                }
+            }
+            for (int i = 0; i < supervisores.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == supervisores[i].VerTrabajador())
+                {
+                    supervisores[i].Schedule = newSchedule;
+                }
+            }
+            for (int i = 0; i < cajeros.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == cajeros[i].VerTrabajador())
+                {
+                    cajeros[i].Schedule = newSchedule;
+                }
+            }
+            for (int i = 0; i < reponedores.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == reponedores[i].VerTrabajador())
+                {
+                    reponedores[i].Schedule = newSchedule;
+                }
+            }
+            for (int i = 0; i < auxiliares.Count; i++)
+            {
+                if (trabajador.VerTrabajador() == auxiliares[i].VerTrabajador())
+                {
+                    auxiliares[i].Schedule = newSchedule;
+                }
+            }
+        }
     }
 }

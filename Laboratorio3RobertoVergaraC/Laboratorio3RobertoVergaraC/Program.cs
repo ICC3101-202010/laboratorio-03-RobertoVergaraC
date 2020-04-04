@@ -11,6 +11,7 @@ namespace Laboratorio3RobertoVergaraC
         static void Main(string[] args)
         {
             Console.WriteLine("Bienvenido al Supermercado, seleccione que opción desea realizar");
+            Administrativo admin = new Administrativo();
             int contador = 1;
             while (contador != 0)
             {
@@ -31,8 +32,11 @@ namespace Laboratorio3RobertoVergaraC
                     DateTime birthday = DateTime.Parse(date);
                     Console.WriteLine("Seleccione el cargo para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):");
                     string status = Console.ReadLine();
-                    Console.WriteLine("Seleccione el salario que desea para el trabajador:");
+                    Console.WriteLine("Seleccione el horario para el trabajador (hora inicio-hora fin):");
+                    string schedule = Console.ReadLine();
+                    Console.WriteLine("Seleccione el salario que desea para el trabajador (int):");
                     int salary = Int32.Parse(Console.ReadLine());
+                    admin.AgregarTrabajador(status,salary,schedule,name,surname,nacionality,rut,birthday);
                 }
                 else if (option == "b") //Subir/Bajar Sueldo a Trabajador
                 {
