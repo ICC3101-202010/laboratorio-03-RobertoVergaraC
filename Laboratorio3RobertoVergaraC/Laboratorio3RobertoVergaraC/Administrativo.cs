@@ -190,7 +190,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == jefes[i].VerPersona())
                 {
                     jefes[i].Salary = newSalary;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(jefes[i].VerPersona());
                     Console.WriteLine(jefes[i].VerInfoTrabajador());
                 }
@@ -200,7 +200,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == supervisores[i].VerPersona())
                 {
                     supervisores[i].Salary = newSalary;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(supervisores[i].VerPersona());
                     Console.WriteLine(supervisores[i].VerInfoTrabajador());
                 }
@@ -210,7 +210,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == cajeros[i].VerPersona())
                 {
                     cajeros[i].Salary = newSalary;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(cajeros[i].VerPersona());
                     Console.WriteLine(cajeros[i].VerInfoTrabajador());
                 }
@@ -220,7 +220,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == reponedores[i].VerPersona())
                 {
                     reponedores[i].Salary = newSalary;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(reponedores[i].VerPersona());
                     Console.WriteLine(reponedores[i].VerInfoTrabajador());
                 }
@@ -230,7 +230,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == auxiliares[i].VerPersona())
                 {
                     auxiliares[i].Salary = newSalary;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(auxiliares[i].VerPersona());
                     Console.WriteLine(auxiliares[i].VerInfoTrabajador());
                 }
@@ -240,12 +240,6 @@ namespace Laboratorio3RobertoVergaraC
 
         public void CambiarRango(Trabajadores trabajador, string newStatus)
         {
-            if (newStatus == "1") { jefes.Add(new Jefes(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-            else if (newStatus == "2") { supervisores.Add(new Supervisores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-            else if (newStatus == "3") { cajeros.Add(new Cajeros(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-            else if (newStatus == "4") { reponedores.Add(new Reponedores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-            else if (newStatus == "5") { auxiliares.Add(new Auxiliares(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-
             for (int i = 0; i < jefes.Count; i++)
             {
                 if (trabajador.VerPersona() == jefes[i].VerPersona())
@@ -281,6 +275,11 @@ namespace Laboratorio3RobertoVergaraC
                     auxiliares.Remove(auxiliares[i]);
                 }
             }
+            if (newStatus == "1") { jefes.Add(new Jefes(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "2") { supervisores.Add(new Supervisores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "3") { cajeros.Add(new Cajeros(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "4") { reponedores.Add(new Reponedores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
+            else if (newStatus == "5") { auxiliares.Add(new Auxiliares(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
 
         }
    
@@ -291,7 +290,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == jefes[i].VerPersona())
                 {
                     jefes[i].Schedule = newSchedule;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(jefes[i].VerPersona());
                     Console.WriteLine(jefes[i].VerInfoTrabajador());
                 }
@@ -301,7 +300,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == supervisores[i].VerPersona())
                 {
                     supervisores[i].Schedule = newSchedule;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(supervisores[i].VerPersona());
                     Console.WriteLine(supervisores[i].VerInfoTrabajador());
                 }
@@ -311,7 +310,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == cajeros[i].VerPersona())
                 {
                     cajeros[i].Schedule = newSchedule;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(cajeros[i].VerPersona());
                     Console.WriteLine(cajeros[i].VerInfoTrabajador());
                 }
@@ -321,7 +320,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == reponedores[i].VerPersona())
                 {
                     reponedores[i].Schedule = newSchedule;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(reponedores[i].VerPersona());
                     Console.WriteLine(reponedores[i].VerInfoTrabajador());
                 }
@@ -331,7 +330,7 @@ namespace Laboratorio3RobertoVergaraC
                 if (trabajador.VerPersona() == auxiliares[i].VerPersona())
                 {
                     auxiliares[i].Schedule = newSchedule;
-                    Console.WriteLine("\n La información del Trabajador se cambió a:");
+                    Console.WriteLine("\nLa información del Trabajador se cambió a:");
                     Console.WriteLine(auxiliares[i].VerPersona());
                     Console.WriteLine(auxiliares[i].VerInfoTrabajador());
                 }
