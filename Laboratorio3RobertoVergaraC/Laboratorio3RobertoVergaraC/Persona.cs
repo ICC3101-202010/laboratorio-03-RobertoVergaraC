@@ -31,7 +31,7 @@ namespace Laboratorio3RobertoVergaraC
 
         public string VerPersona()
         {
-            return "Nombre: " + this.Name + "\nApellido: " + this.Surname + "\nNacionalidad: " + this.Nacionality + "\nRut: " + this.Rut + "\nFecha Nacimiento: " + this.Birthdate;
+            return "Nombre: " + this.Name + "\nApellido: " + this.Surname + "\nNacionalidad: " + this.Nacionality + "\nRut: " + this.Rut + "\nFecha Nacimiento: " + this.Birthdate.ToString("dd/MM/yyyy");
         }
     }
 }

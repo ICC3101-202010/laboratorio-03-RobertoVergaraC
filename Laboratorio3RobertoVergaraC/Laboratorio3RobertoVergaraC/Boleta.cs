@@ -19,12 +19,5 @@ namespace Laboratorio3RobertoVergaraC
             this.productosComprados = productosComprados;
         }
 
-        public void VerProductosComprados()
-        {
-            for (int i = 0; i<this.productosComprados.Count; i++)
-            {
-                Console.WriteLine(this.productosComprados[i]);
-            }
-        }
     }
 }

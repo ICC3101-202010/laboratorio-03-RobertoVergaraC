@@ -12,6 +12,7 @@ namespace Laboratorio3RobertoVergaraC
         {
             Console.WriteLine("Bienvenido al Supermercado, seleccione que opción desea realizar");
             Administrativo admin = new Administrativo();
+            Ventas ventas = new Ventas();
             int contador = 1;
             while (contador != 0)
             {
@@ -87,10 +88,23 @@ namespace Laboratorio3RobertoVergaraC
                     string rut = Console.ReadLine();
                     Console.WriteLine("Seleccione la fecha de nacimiento del cliente (año-mes-día):");
                     string date = Console.ReadLine();
-                    DateTime birthday = DateTime.Parse(date);
+                    DateTime birthdate = DateTime.Parse(date);
+                    ventas.AgregarCliente(name, surname, nacionality, rut, birthdate);
                 }
                 else if (option == "g") //Comprar con un cliente
                 {
+                    Console.WriteLine("\nSeleccione el cliente que desee:");
+                    ventas.VerClientes();
+                    int choose = Int32.Parse(Console.ReadLine());
+                    Clientes cliente = ventas.clientes[choose - 1];
+                    List<Producto> carro = ventas.AgregarAlCarro();
+                    Console.WriteLine("¿Desea realizar la compra? (si) (no)");
+                    string desition = Console.ReadLine();
+                    if (desition == "no") { continue; }
+                    else if (desition == "si")
+                    {
+
+                    }
 
                 }
                 else if (option == "h") //Agregar Producto
@@ -103,6 +117,7 @@ namespace Laboratorio3RobertoVergaraC
                     int price = Int32.Parse(Console.ReadLine());
                     Console.WriteLine("Seleccione la cantidad del producto que quiere agregar:");
                     int stock = Int32.Parse(Console.ReadLine());
+                    ventas.CrearProducto(name, brand, price, stock);
                 }
                 else if (option == "i") //Salir del programa
                 {

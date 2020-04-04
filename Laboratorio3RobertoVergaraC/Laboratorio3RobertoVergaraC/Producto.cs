@@ -13,17 +13,27 @@ namespace Laboratorio3RobertoVergaraC
         private int price;
         private int stock;
 
+        public string Name { get => name; set => name = value; }
+        public string Brand { get => brand; set => brand = value; }
+        public int Price { get => price; set => price = value; }
+        public int Stock { get => stock; set => stock = value; }
+
         public Producto(string name, string brand, int price, int stock)
         {
-            this.name = name;
-            this.brand = brand;
-            this.price = price;
-            this.stock = stock;
+            this.Name = name;
+            this.Brand = brand;
+            this.Price = price;
+            this.Stock = stock;
+        }
+
+        public string ValidarProducto()
+        {
+            return "Nombre: " + this.Name + "\nMarca: " + this.Brand;
         }
 
         public string InformacionProducto()
         {
-            return "Nombre: " + this.name + "\nMarca: " + this.brand + "\nPrecio: " + this.price + "\nStock: " + this.stock + "\n";
+            return "Nombre: " + this.Name + "\nMarca: " + this.Brand + "\nPrecio: " + this.Price + "\nStock: " + this.Stock;
         }
     }
 }
