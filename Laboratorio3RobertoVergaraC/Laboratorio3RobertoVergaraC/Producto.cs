@@ -8,6 +8,9 @@ namespace Laboratorio3RobertoVergaraC
 {
     class Producto
     {
-
+        private string name;
+        private string brand;
+        private double price;
+        private int stock;   
     }
 }

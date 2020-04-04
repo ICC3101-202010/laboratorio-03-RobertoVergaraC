@@ -18,7 +18,21 @@ namespace Laboratorio3RobertoVergaraC
                 string option = Console.ReadLine();
                 if (option == "a")
                 {
-
+                    Console.WriteLine("Seleccione el nombre del trabajador:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Seleccione el apellido del trabajador:");
+                    string surname = Console.ReadLine();
+                    Console.WriteLine("Seleccione la nacionalidad del trabajador:");
+                    string nacionality = Console.ReadLine();
+                    Console.WriteLine("Seleccione el rut del trabajador:");
+                    string rut = Console.ReadLine();
+                    Console.WriteLine("Seleccione la fecha de nacimiento del trabajador (año-mes-día):");
+                    string date = Console.ReadLine();
+                    DateTime birthday = DateTime.Parse(date);
+                    Console.WriteLine("Seleccione el cargo para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):");
+                    string status = Console.ReadLine();
+                    Console.WriteLine("Seleccione el salario que desea para el trabajador:");
+                    int salary = Int32.Parse(Console.ReadLine());
                 }
                 else if (option == "b")
                 {
