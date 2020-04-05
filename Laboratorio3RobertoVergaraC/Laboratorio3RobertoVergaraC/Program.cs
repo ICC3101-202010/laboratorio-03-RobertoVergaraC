@@ -100,18 +100,18 @@ namespace Laboratorio3RobertoVergaraC
                     List<Producto> carro = ventas.AgregarAlCarro();
                     int contador1 = 0;
                     Console.WriteLine("\n--------BOLETA--------\n\n");
-                    Console.WriteLine("Cliente :\n" + cliente.VerPersona());
-                    Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-                    Console.WriteLine("Fue atendido en: " + admin.Cajero());
-                    Console.WriteLine("El cajero que lo atendió fue:");
+                    Console.WriteLine("CLIENTE :\n" + cliente.VerPersona());
+                    Console.WriteLine("FECHA Y HORA DE LA COMPRA: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+                    Console.WriteLine("FUE ATENDIDO EN: " + admin.Cajero());
+                    Console.WriteLine("EL CAJERO QUE LO ATENDIÓ FUE:");
                     Console.WriteLine(admin.CajeroPersona());
-                    Console.WriteLine("Los productos que se compraron son:");
+                    Console.WriteLine("LOS PRODUCTOS QUE SE COMPRARON SON:");
                     for (int i = 0; i < carro.Count; i++)
                     {
                         Console.WriteLine("\n" + carro[i].InformacionProducto2());
                         contador1 += carro[i].Price;
                     }
-                    Console.WriteLine("\nPrecio Total: " + contador1);
+                    Console.WriteLine("\nPRECIO TOTAL: " + contador1);
                     Console.WriteLine("\n\n--------FIN BOLETA--------");
                 }
                 else if (option == "h") //Agregar Producto
