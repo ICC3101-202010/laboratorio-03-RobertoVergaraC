@@ -341,5 +341,12 @@ namespace Laboratorio3RobertoVergaraC
             Random rdn = new Random();
             return "Cajero " + (rdn.Next(a, b));
         }
+
+        public string CajeroPersona()
+        {
+            Random random = new Random();
+            int a = random.Next(cajeros.Count);
+            return cajeros[a].VerPersona();
+        }
     }
 }

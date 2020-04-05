@@ -14,6 +14,12 @@ namespace Laboratorio3RobertoVergaraC
         public List<Clientes> clientes { get => clientess; set => clientess = value; }
         public List<Producto> Productos { get => productos; set => productos = value; }
 
+        public Ventas()
+        {
+            this.clientes = clientes;
+            this.Productos = Productos;
+        }
+
         public bool AgregarCliente(string name, string surname, string nacionality, string rut, DateTime birthdate)
         {
             Clientes cliente = new Clientes(name, surname, nacionality, rut, birthdate);
@@ -121,38 +127,17 @@ namespace Laboratorio3RobertoVergaraC
                 else if (folow == "b")
                 {
                     Console.WriteLine("\nLos Productos seleccionados son: ");
-                    for (int i = 0; i < carro.Count - 1; i++)
+                    for (int i = 0; i < carro.Count; i++)
                     {
                         Console.WriteLine("\n" + carro[i].InformacionProducto());
                     }
                     return carro;
                 }
-
                 else
                 {
                     Console.WriteLine("No es opción válida, por favor seleccione una que si lo sea");
                 }
-
             }
-        }
-
-        public void GenerarBoleta(List<Producto> carro, Clientes cliente)
-        {
-            int contador = 0;
-            Administrativo ad = new Administrativo();
-            Console.WriteLine("\n--------BOLETA--------\n\n");
-            Console.WriteLine("Cliente :\n" + cliente.VerPersona());
-            Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-            Console.WriteLine("Fue atendido en: " + ad.Cajero());
-            Console.WriteLine("Los productos que se compraron son:");
-            for (int i = 0; i < carro.Count; i++)
-            {
-                Console.WriteLine("\n" + carro[i].InformacionProducto2());
-                contador += carro[i].Price;            
-            }
-            Console.WriteLine("\nPrecio Total: " + contador);
-            Console.WriteLine("\n\n--------FIN BOLETA--------");
-
         }
 
         public void ModificarStock()
@@ -163,11 +148,6 @@ namespace Laboratorio3RobertoVergaraC
             Console.WriteLine("Seleccione la nueva cantidad:");
             int cantidad2 = Int32.Parse(Console.ReadLine());
             productos[choose2 - 1].Stock = cantidad2;
-        }
-        
-        
+        } 
     }
-
-            
-    
 }

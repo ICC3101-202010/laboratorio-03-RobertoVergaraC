@@ -37,7 +37,7 @@ namespace Laboratorio3RobertoVergaraC
                     string schedule = Console.ReadLine();
                     Console.WriteLine("Seleccione el salario que desea para el trabajador (int):");
                     int salary = Int32.Parse(Console.ReadLine());
-                    admin.AgregarTrabajador(status,salary,schedule,name,surname,nacionality,rut,birthday);
+                    admin.AgregarTrabajador(status, salary, schedule, name, surname, nacionality, rut, birthday);
                 }
                 else if (option == "b") //Subir/Bajar Sueldo a Trabajador
                 {
@@ -59,7 +59,7 @@ namespace Laboratorio3RobertoVergaraC
                     Console.WriteLine("Seleccione el nuevo cargo que desea para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):");
                     string status = Console.ReadLine();
                     Trabajadores worker = admin.IdentificarObjeto(name, rut);
-                    admin.CambiarRango(worker,status);
+                    admin.CambiarRango(worker, status);
                 }
                 else if (option == "d") //Cambiar horario Trabajador
                 {
@@ -67,7 +67,7 @@ namespace Laboratorio3RobertoVergaraC
                     string name = Console.ReadLine();
                     Console.WriteLine("Seleccione el rut del trabajador:");
                     string rut = Console.ReadLine();
-                    Trabajadores worker = admin.IdentificarObjeto(name,rut);
+                    Trabajadores worker = admin.IdentificarObjeto(name, rut);
                     Console.WriteLine("Seleccione el nuevo horario que desea (Horario actual: " + worker.Schedule + "):");
                     string schedule = Console.ReadLine();
                     admin.CambiarHorario(worker, schedule);
@@ -98,7 +98,21 @@ namespace Laboratorio3RobertoVergaraC
                     int choose = Int32.Parse(Console.ReadLine());
                     Clientes cliente = ventas.clientes[choose - 1];
                     List<Producto> carro = ventas.AgregarAlCarro();
-                    ventas.GenerarBoleta(carro,cliente);
+                    int contador1 = 0;
+                    Console.WriteLine("\n--------BOLETA--------\n\n");
+                    Console.WriteLine("Cliente :\n" + cliente.VerPersona());
+                    Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+                    Console.WriteLine("Fue atendido en: " + admin.Cajero());
+                    Console.WriteLine("El cajero que lo atendió fue:");
+                    Console.WriteLine(admin.CajeroPersona());
+                    Console.WriteLine("Los productos que se compraron son:");
+                    for (int i = 0; i < carro.Count; i++)
+                    {
+                        Console.WriteLine("\n" + carro[i].InformacionProducto2());
+                        contador1 += carro[i].Price;
+                    }
+                    Console.WriteLine("\nPrecio Total: " + contador1);
+                    Console.WriteLine("\n\n--------FIN BOLETA--------");
                 }
                 else if (option == "h") //Agregar Producto
                 {
