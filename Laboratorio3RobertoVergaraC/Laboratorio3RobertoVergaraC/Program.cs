@@ -56,7 +56,7 @@ namespace Laboratorio3RobertoVergaraC
                     string name = Console.ReadLine();
                     Console.WriteLine("Seleccione el rut del trabajador:");
                     string rut = Console.ReadLine();
-                    Console.WriteLine("Seleccione el nuevo cargo que desea para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):"); //Agregar puesto actual
+                    Console.WriteLine("Seleccione el nuevo cargo que desea para el trabajador ((1)jefe,(2)supervisor,(3)cajero,(4)reponedor,(5)auxiliar):");
                     string status = Console.ReadLine();
                     Trabajadores worker = admin.IdentificarObjeto(name, rut);
                     admin.CambiarRango(worker,status);

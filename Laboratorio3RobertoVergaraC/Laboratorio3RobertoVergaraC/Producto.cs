@@ -35,5 +35,10 @@ namespace Laboratorio3RobertoVergaraC
         {
             return "Nombre: " + this.Name + "\nMarca: " + this.Brand + "\nPrecio: " + this.Price + "\nStock: " + this.Stock;
         }
+
+        public string InformacionProducto2()
+        {
+            return "Nombre: " + this.Name + "\nMarca: " + this.Brand + "\nPrecio: " + this.Price;
+        }
     }
 }

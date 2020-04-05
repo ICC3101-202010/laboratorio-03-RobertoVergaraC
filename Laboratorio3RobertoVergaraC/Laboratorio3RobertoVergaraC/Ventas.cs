@@ -83,7 +83,7 @@ namespace Laboratorio3RobertoVergaraC
             int diferencia1 = producto1.Stock - cantidad1;
             if (diferencia1 >= 0)
             {
-                for (int i = 1; i < cantidad1; i++)
+                for (int i = 0; i < cantidad1; i++)
                 {
                     carro.Add(producto1);
                     producto1.Stock = diferencia1;
@@ -107,7 +107,7 @@ namespace Laboratorio3RobertoVergaraC
                     int diferencia2 = producto2.Stock - cantidad2;
                     if (diferencia2 >= 0)
                     {
-                        for (int i = 1; i < cantidad2; i++)
+                        for (int i = 0; i < cantidad2; i++)
                         {
                             carro.Add(producto2);
                             producto2.Stock = diferencia2;
@@ -144,15 +144,13 @@ namespace Laboratorio3RobertoVergaraC
             Console.WriteLine("Cliente :\n" + cliente.VerPersona());
             Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
             Console.WriteLine("Fue atendido en: " + ad.Cajero());
-            Console.WriteLine("La persona que lo atendió fue:");
-            ad.CajeroPersona();
             Console.WriteLine("Los productos que se compraron son:");
             for (int i = 0; i < carro.Count; i++)
             {
-                Console.WriteLine("\n" + Productos[i].InformacionProducto());
-                contador += Productos[i].Price;            
+                Console.WriteLine("\n" + carro[i].InformacionProducto2());
+                contador += carro[i].Price;            
             }
-            Console.WriteLine("Precio Total: " + contador);
+            Console.WriteLine("\nPrecio Total: " + contador);
             Console.WriteLine("\n\n--------FIN BOLETA--------");
 
         }

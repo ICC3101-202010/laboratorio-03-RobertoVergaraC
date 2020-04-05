@@ -39,7 +39,7 @@ namespace Laboratorio3RobertoVergaraC
                 Supervisores supervisor = new Supervisores(salary, schedule, name, surname, nacionality, rut, birthdate);
                 for (int i = 0; i < supervisores.Count; i++)
                 {
-                    if (supervisor.VerPersona() == jefes[i].VerPersona())
+                    if (supervisor.VerPersona() == supervisores[i].VerPersona())
                     {
                         Console.WriteLine("\nEl trabajador ya existe");
                         return false;
@@ -235,7 +235,6 @@ namespace Laboratorio3RobertoVergaraC
                     Console.WriteLine(auxiliares[i].VerInfoTrabajador());
                 }
             }
-
         }
 
         public void CambiarRango(Trabajadores trabajador, string newStatus)
@@ -280,11 +279,10 @@ namespace Laboratorio3RobertoVergaraC
             else if (newStatus == "3") { cajeros.Add(new Cajeros(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
             else if (newStatus == "4") { reponedores.Add(new Reponedores(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
             else if (newStatus == "5") { auxiliares.Add(new Auxiliares(trabajador.Salary, trabajador.Schedule, trabajador.Name, trabajador.Surname, trabajador.Nacionality, trabajador.Rut, trabajador.Birthdate)); }
-
         }
    
         public void CambiarHorario(Trabajadores trabajador, string newSchedule)
-            {
+        {
             for (int i = 0; i < jefes.Count; i++)
             {
                 if (trabajador.VerPersona() == jefes[i].VerPersona())
@@ -336,19 +334,12 @@ namespace Laboratorio3RobertoVergaraC
                 }
             }
         }
-
         public string Cajero()
         {
             int a = 1;
             int b = 6;
             Random rdn = new Random();
             return "Cajero " + (rdn.Next(a, b));
-        }
-
-        public string CajeroPersona()
-        {
-            Random rnd = new Random();
-            return cajeros[0].VerPersona();
         }
     }
 }
