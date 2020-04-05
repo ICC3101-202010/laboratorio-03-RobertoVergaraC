@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Administrativo.cs" />
     <Compile Include="Auxiliares.cs" />
-    <Compile Include="Boleta.cs" />
     <Compile Include="Cajeros.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Jefes.cs" />

@@ -16,7 +16,7 @@ namespace Laboratorio3RobertoVergaraC
             int contador = 1;
             while (contador != 0)
             {
-                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d) Cambiar horario a Trabajador\n(e) Ver todos los Trabajadores\n(f) Agregar Cliente\n(g) Comprar con un cliente (recuerde que para poder comprar, antes tiene que haber creado por lo menos 1 cajero para que lo puedan atender)\n(h) Agregar Producto\n(i)Modificar Stock de Algún Producto\n(j) Salir del programa\n");
+                Console.WriteLine("\n(a) Agregar Trabajador\n(b) Subir/Bajar Sueldo a Trabajador\n(c) Subir/Bajar Rango a Trabajador\n(d) Cambiar horario a Trabajador\n(e) Ver todos los Trabajadores\n(f) Agregar Cliente\n(g) Comprar con un cliente (recuerde que para poder comprar, antes tiene que haber creado por lo menos 1 cajero para que lo puedan atender)\n(h) Agregar Producto\n(i) Modificar Stock de Algún Producto\n(j) Salir del programa\n");
                 string option = Console.ReadLine();
                 if (option == "a") //Agregar Trabajador
                 {
@@ -98,14 +98,7 @@ namespace Laboratorio3RobertoVergaraC
                     int choose = Int32.Parse(Console.ReadLine());
                     Clientes cliente = ventas.clientes[choose - 1];
                     List<Producto> carro = ventas.AgregarAlCarro();
-                    Console.WriteLine("¿Desea realizar la compra? (si) (no)");
-                    string desition = Console.ReadLine();
-                    if (desition == "no") { continue; }
-                    else if (desition == "si")
-                    {
-
-                    }
-
+                    ventas.GenerarBoleta(carro,cliente);
                 }
                 else if (option == "h") //Agregar Producto
                 {
@@ -121,7 +114,7 @@ namespace Laboratorio3RobertoVergaraC
                 }
                 else if (option == "i") //Modificar Stock de algún producto
                 {
-
+                    ventas.ModificarStock();
                 }
                 else if (option == "j") //Salir del programa
                 {

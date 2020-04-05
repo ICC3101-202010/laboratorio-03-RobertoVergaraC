@@ -53,7 +53,7 @@ namespace Laboratorio3RobertoVergaraC
 
         public void VerProductos()
         {
-            Console.WriteLine("\nLos Productos que el supermercado son: ");
+            Console.WriteLine("\nLos Productos que el supermercado tiene son: ");
             for (int i = 1; i < Productos.Count + 1; i++)
             {
                 Console.WriteLine("\nOpción (" + i + "):");
@@ -97,7 +97,7 @@ namespace Laboratorio3RobertoVergaraC
             {
                 Console.WriteLine("\nDesea Seleccionar Otro producto ( (a)si , (b)no )");
                 string folow = Console.ReadLine();
-                if (folow == "1")
+                if (folow == "a")
                 {
                     VerProductos();
                     int choose2 = Int32.Parse(Console.ReadLine());
@@ -115,15 +115,15 @@ namespace Laboratorio3RobertoVergaraC
                     }
                     else
                     {
-                        Console.WriteLine("No se puede agegar el producto/s al carro por que no hay suficiente stock");
+                        Console.WriteLine("\nNo se puede agegar el producto/s al carro por que no hay suficiente stock");
                     }
                 }
-                else if (folow == "2")
+                else if (folow == "b")
                 {
                     Console.WriteLine("\nLos Productos seleccionados son: ");
-                    for (int i = 0; i < carro.Count; i++)
+                    for (int i = 0; i < carro.Count - 1; i++)
                     {
-                        Console.WriteLine("\n" + Productos[i].InformacionProducto());
+                        Console.WriteLine("\n" + carro[i].InformacionProducto());
                     }
                     return carro;
                 }
@@ -136,32 +136,28 @@ namespace Laboratorio3RobertoVergaraC
             }
         }
 
-        public string Cajero(int a, int b)
-        {
-            a = 1;
-            b = 6;
-            Random rdn = new Random();
-            return "Cajero " + (rdn.Next(a, b));
-        }
-
         public void GenerarBoleta(List<Producto> carro, Clientes cliente)
         {
+            int contador = 0;
             Administrativo ad = new Administrativo();
-            Console.WriteLine("\nBOLETA \n\n");
+            Console.WriteLine("\n--------BOLETA--------\n\n");
             Console.WriteLine("Cliente :\n" + cliente.VerPersona());
             Console.WriteLine("Fecha y hora de la Compra: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
             Console.WriteLine("Fue atendido en: " + ad.Cajero());
-            Console.WriteLine("La persona que lo atendió fue :\n" + ad.CajeroPersona());
+            Console.WriteLine("La persona que lo atendió fue:");
+            ad.CajeroPersona();
             Console.WriteLine("Los productos que se compraron son:");
             for (int i = 0; i < carro.Count; i++)
             {
                 Console.WriteLine("\n" + Productos[i].InformacionProducto());
+                contador += Productos[i].Price;            
             }
+            Console.WriteLine("Precio Total: " + contador);
             Console.WriteLine("\n\n--------FIN BOLETA--------");
 
         }
 
-        public void ModificarStock(List<Producto> productoss)
+        public void ModificarStock()
         {
             Console.WriteLine("Seleccione el producto que desea modificar");
             VerProductos();
